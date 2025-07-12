@@ -1,0 +1,36 @@
+name: Publish Ansible Collection to Galaxy
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Install Ansible
+        run: |
+          pip install ansible
+
+      - name: Build collection
+        run: |
+          cd ansible_collections/kevin197011/krun
+          ansible-galaxy collection build
+
+      - name: Publish to Ansible Galaxy
+        env:
+          ANSIBLE_GALAXY_API_KEY: ${{ secrets.GALAXY_API_KEY }}
+        run: |
+          cd ansible_collections/kevin197011/krun
+          export GALAXY_API_KEY
+          COLLECTION_TAR=$(ls kevin197011-krun-*.tar.gz | head -n1)
+          ansible-galaxy collection publish "$COLLECTION_TAR" --api-key "$GALAXY_API_KEY"

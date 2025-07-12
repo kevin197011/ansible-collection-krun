@@ -32,7 +32,7 @@ author:
 
 EXAMPLES = r'''
 - name: Krun install package
-  kk.krun.krun:
+  kevin197011.krun.krun:
     name: "install-docker.sh"
     script_args:
       - "--force"
