@@ -3,7 +3,7 @@
     ansible_python_interpreter: /usr/bin/python
   tasks:
     - name: Run krun to install nginx
-      kk.krun.krun:
-        name: "install-nginx.sh"
+      kevin197011.krun.krun:
+        name: "hello-world.sh"
         script_args:
           - "--force"

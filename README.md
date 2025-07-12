@@ -1,4 +1,4 @@
-# kk.krun Collection
+# kevin197011.krun Collection
 
 Ansible collection for deploying and running krun scripts on remote hosts.
 
@@ -7,7 +7,12 @@ Ansible collection for deploying and running krun scripts on remote hosts.
 本地构建并安装：
 ```bash
 ansible-galaxy collection build
-ansible-galaxy collection install kk-krun-0.1.0.tar.gz
+ansible-galaxy collection install kevin197011-krun-0.1.1.tar.gz
+```
+
+公共安装:
+```bash
+ansible-galaxy collection install kevin197011.krun
 ```
 
 ## 用法示例
@@ -18,7 +23,7 @@ ansible-galaxy collection install kk-krun-0.1.0.tar.gz
   gather_facts: false
   tasks:
     - name: Run krun
-      kk.krun.krun:
+      kevin197011.krun.krun:
         name: "install-docker.sh"
         script_args:
           - "--force"

@@ -1,10 +1,10 @@
-namespace: kk
+namespace: kevin197011
 name: krun
-version: 0.1.0
+version: 0.1.1
 readme: README.md
 authors:
-  - kk <your@email.com>
+  - kevin197011 <kevin197011@gmail.com>
 description: Ansible module for krun remote script runner
 license:
   - MIT
-repository: https://github.com/kevin197011/krun
+repository: https://github.com/kevin197011/ansible-collection-krun.git
