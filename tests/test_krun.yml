@@ -1,0 +1,9 @@
+- hosts: all
+  vars:
+    ansible_python_interpreter: /usr/bin/python
+  tasks:
+    - name: Run krun to install nginx
+      kk.krun.krun:
+        name: "install-nginx.sh"
+        script_args:
+          - "--force"

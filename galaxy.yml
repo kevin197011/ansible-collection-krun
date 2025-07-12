@@ -1,0 +1,10 @@
+namespace: kk
+name: krun
+version: 0.1.0
+readme: README.md
+authors:
+  - kk <your@email.com>
+description: Ansible module for krun remote script runner
+license:
+  - MIT
+repository: https://github.com/kevin197011/krun
